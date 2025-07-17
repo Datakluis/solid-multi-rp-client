@@ -1,5 +1,5 @@
 const OIDCRelyingParty = require('@solid/oidc-rp')
-const KVPFileStore = require('kvplus-files')
+const KVPSQLiteStore = require('kvplus-sqlite')
 const COLLECTION_NAME = 'clients'
 
 module.exports = class OIDCClientStore {
@@ -10,14 +10,14 @@ module.exports = class OIDCClientStore {
    *
    * @param [options.collectionName='clients'] {string}
    *
-   * @param [options.backend] {KVPFileStore} Either pass in a backend store
+   * @param [options.backend] {KVPSQLiteStore} Either pass in a backend store
    * @param [options.path] {string} Or initialize the store from path.
    */
   constructor (options = {}) {
     this.collectionName = options.collectionName || COLLECTION_NAME
 
     this.backend = options.backend ||
-      new KVPFileStore({
+      new KVPSQLiteStore({
         path: options.path,
         collections: [this.collectionName]
       })

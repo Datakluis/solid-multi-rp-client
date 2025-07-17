@@ -15,7 +15,7 @@ class MultiRpClient {
    *
    * Needed to initialize the ClientStore:
    *
-   * @param [options.backend] {KVPFileStore} Either pass in a backend store
+   * @param [options.backend] {KVPSQLiteStore} Either pass in a backend store
    * @param [options.path] {string} Or initialize the store from path.
    * @param [options.collectionName='clients'] {string}
    *

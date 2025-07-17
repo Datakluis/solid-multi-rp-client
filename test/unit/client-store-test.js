@@ -1,7 +1,7 @@
 'use strict'
 
 const test = require('tape')
-const KVPFileStore = require('kvplus-files')
+const KVPSQLiteStore = require('kvplus-sqlite')
 
 const ClientStore = require('../../src/client-store')
 const OIDCRelyingParty = require('@solid/oidc-rp')
